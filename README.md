@@ -70,6 +70,8 @@
  - iMessage & Facetime
  - Brightness keys on keyboard (Fixed by migrating from `ApplePS2SmartTouchPad.kext` to `VoodooPS2Controller.kext`)
  - Built in Card Reader with Sinetek-rtsx
+ - filevault
+ - usb tethering
 
 ### Setup SMBIOS:
 
@@ -82,7 +84,7 @@ chmod +x GenSMBIOS.command
 ```
 3. Install MacSerial
 4. Generate SMBIOS
-5. Type `MacBookPro11,4` (You can use anything from 11,1 to 11,4)
+5. Type `MacPro7,1` ("iMacPro7,1" could work but have not been tested)
 6. You will get your SMBIOS: Type, Serial, Board Serial and SmUUID.
 7. Edit your Config.plist either with OCC or Xcode or TextEdit: <br>
   i. `Type` to `Generic -> SystemProductName` <br>
@@ -90,10 +92,13 @@ chmod +x GenSMBIOS.command
   iii. `Board Serial` to `Generic -> MLB` <br>
   iv. `SmUUID` to `Generic -> SystemUUID` <br>
 
+Reminder that you want either an invalid serial or valid serial numbers but those not in use, you want to get a message back like: "Invalid Serial" or "Purchase Date not Validated"
+
+https://checkcoverage.apple.com/
+ 
 
 ### Notes: 
 - Before creating an issue, please check if there is an open/closed one already related with your issue.<br>
-- In order to use iMessage and Facetime, try using `MacPro7,1` or see [#12](https://github.com/GeekyCoder7/OpenCore-EFI-Lenovo-Y50-70/issues/12#issuecomment-754111916), [#17](https://github.com/GeekyCoder7/OpenCore-EFI-Lenovo-Y50-70/issues/17).<br>
 - For those having issues with the display color, for some users the display color have a light brownish tint. <br>
 In order to fix this you need to calibrate your display colors, by going into display settings from system preferences, then click calibrate from the color tab. <br>
 - You may need to modify keys for the keyboard. For me the command was swapped with alt button (windows button on keyboard). So in order to fix this do the following: <br>
